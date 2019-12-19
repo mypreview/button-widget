@@ -32,10 +32,10 @@ class Button_Widget_Register extends WP_Widget {
     public function __construct() {
 
         parent::__construct( 
-            'button_widget', apply_filters( 'button_widget_name', _x( 'Button', 'widget name', 'button-widget' ), array( 
+            'button_widget', apply_filters( 'button_widget_name', _x( 'Button', 'widget name', 'button-widget' ) ), array( 
             'description' => _x( 'Display a simple button widget in your sidebar areas.', 'widget description', 'button-widget' ),
             'customize_selective_refresh' => TRUE
-        ) ) );
+        ) );
 
         $this->defaults = array(
             'text' => '',
