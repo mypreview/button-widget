@@ -88,7 +88,6 @@ class Button_Widget_Register extends WP_Widget {
     /**
      * Widget Settings.
      *
-     * @see     https://developer.wordpress.org/reference/functions/wp_parse_args/
      * @access  public
      * @param   mixed   $instance   Instance.
      * @return  void
