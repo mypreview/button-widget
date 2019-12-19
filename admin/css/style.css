@@ -1,0 +1,13 @@
+/**
+ * All of the the admin-facing stylesheet code for 
+ * `Button` widget reside in this file.
+ *
+ * @since       1.0.0
+ * @package     Button Widget
+ * @author      MyPreview (Github: @mahdiyazdani, @mypreview)
+ */
+.widget-content label[for$="text_color"],
+.widget-content label[for$="background_color"] {
+	display: block;
+	margin-bottom: 3px;
+}
