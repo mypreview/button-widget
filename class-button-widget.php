@@ -32,12 +32,10 @@ class Button_Widget_Cls extends WP_Widget {
     public function __construct() {
 
         parent::__construct( 
-                /* translators: 1: Plugin name along with opening and closing parentheses. */
-                'button_widget', apply_filters( 'button_widget_name', _x( 'Button', 'widget name', 'button-widget' ), array( 
-                'description' => _x( 'Display a simple button widget in your sidebar areas.', 'widget description', 'button-widget' ),
-                'customize_selective_refresh' => TRUE
-            ) )
-         );
+            'button_widget', apply_filters( 'button_widget_name', _x( 'Button', 'widget name', 'button-widget' ), array( 
+            'description' => _x( 'Display a simple button widget in your sidebar areas.', 'widget description', 'button-widget' ),
+            'customize_selective_refresh' => TRUE
+        ) ) );
 
         $this->defaults = array(
             'text' => '',
@@ -116,6 +114,7 @@ class Button_Widget_Cls extends WP_Widget {
             <label 
                 for="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>"
             ><?php 
+                /* translators: %s: Small open and close tags. */
                 printf( _x( 'ID %sattribute%s:', 'field label', 'button-widget' ), '<small>', '</small>' ); 
             ?></label>
             <input
@@ -130,6 +129,7 @@ class Button_Widget_Cls extends WP_Widget {
             <label 
                 for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
             ><?php 
+                /* translators: %s: Small open and close tags. */
                 printf( _x( 'Title %sattribute%s:', 'field label', 'button-widget' ), '<small>', '</small>' ); 
             ?></label>
             <input
