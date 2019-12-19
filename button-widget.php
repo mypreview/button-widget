@@ -163,8 +163,8 @@ if ( ! class_exists( 'Button_Widget' ) ) :
 	     */
 		public function register_widget() {
 
-			require_once sprintf( '%sclass-button-widget.php', BUTTON_WIDGET_DIR_PATH );
-        	register_widget( 'Button_Widget_Cls' );
+			require_once sprintf( '%sbutton-widget-register.php', BUTTON_WIDGET_DIR_PATH );
+        	register_widget( 'Button_Widget_Register' );
 
 		}
 
