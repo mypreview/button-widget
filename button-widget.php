@@ -24,7 +24,7 @@
  * Description:       		A simple customizable button widget for your sidebars to allow users take actions, and make choices, with a single tap.
  * Version:           		1.0.0
  * Author:            		MyPreview
- * Author URI:        		https://www.mypreview.one
+ * Author URI:        		https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94
  * License:           		GPL-2.0
  * License URI:       		http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       		button-widget
@@ -40,8 +40,9 @@ if ( ! defined( 'WPINC' ) ) {
  * @see 	https://codex.wordpress.org/Function_Reference/plugin_basename
  * @see 	http://php.net/manual/en/language.constants.predefined.php
  */
-$plugin_data = get_file_data( __FILE__, array( 'Version' => 'Version' ), 'plugin' );
-define( 'BUTTON_WIDGET_VERSION', $plugin_data['Version'] );
+$plugin_data = get_file_data( __FILE__, array( 'author_uri' => 'Author URI', 'version' => 'Version' ), 'plugin' );
+define( 'BUTTON_WIDGET_VERSION', $plugin_data['version'] );
+define( 'BUTTON_WIDGET_AUTHOR_URI', $plugin_data['author_uri'] );
 define( 'BUTTON_WIDGET_FILE', __FILE__ );
 define( 'BUTTON_WIDGET_BASENAME', basename( BUTTON_WIDGET_FILE ) );
 define( 'BUTTON_WIDGET_PLUGIN_BASENAME', plugin_basename( BUTTON_WIDGET_FILE ) );
@@ -178,8 +179,8 @@ if ( ! class_exists( 'Button_Widget' ) ) :
 		public function additional_links( $links ) {
 
 			$plugin_links = array();
-			$plugin_links[] = sprintf( _x( '%sHire Me!%s', 'plugin link', 'button-widget' ) , sprintf( '<a href="https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94/" class="button-link-delete" target="_blank" rel="noopener noreferrer nofollow" title="%s">', esc_attr_x( 'Looking for help? Hire Me!', 'upsell', 'button-widget' ) ), '</a>' );
-			$plugin_links[] = sprintf( _x( '%sSupport%s', 'plugin link', 'button-widget' ) , '<a href="https://wordpress.org/support/plugin/container-block" target="_blank" rel="noopener noreferrer nofollow">', '</a>' );
+			$plugin_links[] = sprintf( _x( '%sHire Me!%s', 'plugin link', 'button-widget' ) , sprintf( '<a href="%s" class="button-link-delete" target="_blank" rel="noopener noreferrer nofollow" title="%s">', esc_url( BUTTON_WIDGET_AUTHOR_URI ), esc_attr_x( 'Looking for help? Hire Me!', 'upsell', 'button-widget' ) ), '</a>' );
+			$plugin_links[] = sprintf( _x( '%sSupport%s', 'plugin link', 'button-widget' ) , '<a href="https://wordpress.org/support/plugin/button-block" target="_blank" rel="noopener noreferrer nofollow">', '</a>' );
 
 			return array_merge( $plugin_links, $links );
 
