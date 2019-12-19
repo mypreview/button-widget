@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; 
 } // End If Statement
 
-class Button_Widget_Cls extends WP_Widget {
+class Button_Widget_Register extends WP_Widget {
 
     /**
      * Defaults
