@@ -1,0 +1,1 @@
+!function(t,e){"use strict";function i(t){t.find(".button-widget-color-picker").wpColorPicker({change:_.throttle(function(){e(this).trigger("change")},3e3)})}t&&(e(document).on("widget-added widget-updated",function(t,e){i(e)}),e(document).ready(function(){e("#widgets-right .widget:has(.button-widget-color-picker)").each(function(){i(e(this))})}))}(window.wp,jQuery);
