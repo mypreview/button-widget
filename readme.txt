@@ -58,6 +58,15 @@ Automatic updates should work smoothly, but we still recommend you back up your 
 4. Then click the Save button to save the widget’s customization.
 5. Preview the site. You should now see the added button widget is visible.
 
+= How do I customize the button’s appearance? =
+Although the button text and background color can be edited, the widget adapts your theme’s default button style with adding the `button` class name to the output markup. You may modify it using the following filter:
+`
+function prefix_custom_button_widget_classname( $classname ) {
+	$classname = 'custom-class-name';
+	return (string) $classname;
+} 
+add_filter( 'button_widget_classname', 'prefix_button_widget_classname', 10, 1 );
+`
 = I need help customizing this plugin? =
 I am a full-stack developer with over five years of experience in WordPress theme and plugin development and customization. I would love to have the opportunity to discuss your project with you.
 [Hire me at UpWork &#8594;](https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94/ "Mahdi Yazdani Freelancer Profile")
