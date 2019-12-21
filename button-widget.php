@@ -180,7 +180,7 @@ if ( ! class_exists( 'Button_Widget' ) ) :
 
 			$plugin_links = array();
 			$plugin_links[] = sprintf( _x( '%sHire Me!%s', 'plugin link', 'button-widget' ) , sprintf( '<a href="%s" class="button-link-delete" target="_blank" rel="noopener noreferrer nofollow" title="%s">', esc_url( BUTTON_WIDGET_AUTHOR_URI ), esc_attr_x( 'Looking for help? Hire Me!', 'upsell', 'button-widget' ) ), '</a>' );
-			$plugin_links[] = sprintf( _x( '%sSupport%s', 'plugin link', 'button-widget' ) , '<a href="https://wordpress.org/support/plugin/button-block" target="_blank" rel="noopener noreferrer nofollow">', '</a>' );
+			$plugin_links[] = sprintf( _x( '%sSupport%s', 'plugin link', 'button-widget' ) , '<a href="https://wordpress.org/support/plugin/button-widget" target="_blank" rel="noopener noreferrer nofollow">', '</a>' );
 
 			return array_merge( $plugin_links, $links );
 
