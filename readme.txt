@@ -73,6 +73,7 @@ I am a full-stack developer with over five years of experience in WordPress them
 
 == Screenshots ==
 1. Widget settings interface
+2. Button widget visible on TwentyTwenty theme’s footer.
 
 == Changelog ==
 = 1.0.0 =
