@@ -60,7 +60,6 @@ class Button_Widget_Register extends WP_Widget {
     public function widget( $args, $instance ) {
 
         $instance = wp_parse_args( (array) $instance, $this->defaults );
-
         $get_text = isset( $instance['text'] )  ?  $instance['text']  :  $this->defaults['text'];
         $get_title = isset( $instance['title'] )  ?  $instance['title']  :  $this->defaults['title'];
         $get_id = isset( $instance['id'] )  ?  $instance['id']  :  $this->defaults['id'];
@@ -93,8 +92,8 @@ class Button_Widget_Register extends WP_Widget {
      * @return  void
      */
     public function form( $instance ) {
-        $instance = wp_parse_args( (array) $instance, $this->defaults );
         
+        $instance = wp_parse_args( (array) $instance, $this->defaults );
         ?><p>
             <label 
                 for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"
