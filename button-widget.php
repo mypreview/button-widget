@@ -52,7 +52,7 @@ define( 'BUTTON_WIDGET_DIR_PATH', plugin_dir_path( BUTTON_WIDGET_FILE ) );
 if ( ! class_exists( 'Button_Widget' ) ) :
 
 	/**
-	 * The Woo Additional Terms - Class
+	 * The Button Widget - Class
 	 */
 	final class Button_Widget {
 
