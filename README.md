@@ -3,11 +3,7 @@
 
 ![Button Widget](https://ps.w.org/button-widget/assets/banner-1544x500.jpg?rev=1542924)
 
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-
-►► If you are not a developer, please use the offical [plugin post page](https://wordpress.org/plugins/button-widget "Download Button Widget plugin") on wordpress.org.
-
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+> ⚠️ If you are not a developer, please use the offical [plugin post page](https://wordpress.org/plugins/button-widget "Download Button Widget plugin") on wordpress.org.
 
 ## Installation
 
