@@ -13,16 +13,16 @@
  * any later version.
  *
  * @link              		https://www.mypreview.one
- * @since             		1.0.0
+ * @since             		1.1.0
  * @package           		button-widget
  * @author     		  		MyPreview (Github: @mahdiyazdani, @mypreview)
- * @copyright 		  		© 2015 - 2019 MyPreview. All Rights Reserved.
+ * @copyright 		  		© 2015 - 2020 MyPreview. All Rights Reserved.
  *
  * @wordpress-plugin
  * Plugin Name:       		Button Widget
  * Plugin URI:        		https://www.mypreview.one
  * Description:       		A simple customizable button widget for your sidebars to allow users take actions, and make choices, with a single tap.
- * Version:           		1.0.0
+ * Version:           		1.1.0
  * Author:            		MyPreview
  * Author URI:        		https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94
  * License:           		GPL-2.0
