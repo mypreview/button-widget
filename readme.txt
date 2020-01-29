@@ -1,11 +1,11 @@
 === Button Widget ===
-Contributors: mahdiyazdani, mypreview
+Contributors: mahdiyazdani, mypreview, gookaani
 Tags: button, widget, callout, call to action
 Donate link: https://www.mypreview.one
 Requires at least: 5.0
 Tested up to: 5.3.1
 Requires PHP: 7.2
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,18 +33,19 @@ Don't forget to rate this plugin [5 shining stars](https://wordpress.org/support
 == Installation ==
 = Minimum Requirements =
 
-* PHP 7.2 or greater is recommended
-* MySQL 5.6 or greater is recommended
+* PHP version 7.2 or greater.
+* MySQL version 5.6 or greater or MariaDB version 10.0 or greater.
+* WordPress version 5.0 or greater.
 
 = Automatic installation =
 
-Automatic installation is the easiest option — WordPress will handles the file transfer, and you won’t need to leave your web browser. To do an automatic install of the plugin, log in to your WordPress dashboard, navigate to the Plugins menu, and click “Add New.”
+Automatic installation is the easiest option — WordPress will handle the file transfer, and you won’t need to leave your web browser. To do an automatic install of the plugin, log in to your WordPress dashboard, navigate to the Plugins menu, and click “Add New.”
  
-In the search field type “Button Widget,” then click “Search Plugins.” Once you’ve found the plugin, you can view details about it such as the point release, rating, and description. Click “Install Now,” and WordPress will take it from there.
+In the search field type “Button Widget”, then click “Search Plugins.” Once you’ve found the plugin, you can view details about it such as the point release, rating, and description. Click “Install Now,” and WordPress will take it from there.
 
 = Manual installation =
 
-Manual installation method requires downloading the plugin plugin and uploading it to your web server via your favorite FTP application. The WordPress codex contains [instructions on how to do this here](https://wordpress.org/support/article/managing-plugins/#manual-plugin-installation "Manual plugin installation").
+The manual installation method requires downloading the plugin and uploading it to your webserver via your favorite FTP application. The WordPress codex contains [instructions on how to do this here](https://wordpress.org/support/article/managing-plugins/#manual-plugin-installation "Manual plugin installation").
 
 = Updating =
 
@@ -76,5 +77,8 @@ I am a full-stack developer with over five years of experience in WordPress them
 2. Button widget visible on TwentyTwenty theme’s footer.
 
 == Changelog ==
+= 1.1.0 =
+* Ability to leave color picker control values empty.
+
 = 1.0.0 =
 * Initial release.
