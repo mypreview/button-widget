@@ -5,7 +5,7 @@
  *
  * @package         button-widget
  * @author          MyPreview (Github: @mahdiyazdani, @mypreview)
- * @since           1.0.0
+ * @since           1.1.0
  */
 
 // Exit if accessed directly.
@@ -43,8 +43,8 @@ class Button_Widget_Register extends WP_Widget {
             'id' => '',
             'link' => '',
             'target' => 0,
-            'text_color' => (string) apply_filters( 'button_widget_text_color', '#FFFFFF' ),
-            'background_color' => (string) apply_filters( 'button_widget_background_color', '#0085BA' )
+            'text_color' => '',
+            'background_color' => ''
         );
 
     }
@@ -59,21 +59,23 @@ class Button_Widget_Register extends WP_Widget {
      */
     public function widget( $args, $instance ) {
 
+        $get_colors = array();
         $instance = wp_parse_args( (array) $instance, $this->defaults );
-        $get_text = isset( $instance['text'] )  ?  $instance['text']  :  $this->defaults['text'];
-        $get_title = isset( $instance['title'] )  ?  $instance['title']  :  $this->defaults['title'];
-        $get_id = isset( $instance['id'] )  ?  $instance['id']  :  $this->defaults['id'];
-        $get_link = isset( $instance['link'] )  ?  $instance['link']  :  $this->defaults['link'];
-        $get_target = isset( $instance['target'] )  ?  self::string_to_bool( $instance['target'] )  :  $this->defaults['target'];
-        $get_text_color = ! empty( $instance['text_color'] )  ?  $instance['text_color']  :  $this->defaults['text_color'];
-        $get_background_color = ! empty( $instance['background_color'] )  ?  $instance['background_color']  :  $this->defaults['background_color'];
+        $get_text = isset( $instance['text'] ) ? $instance['text'] : $this->defaults['text'];
+        $get_title = isset( $instance['title'] ) ? $instance['title'] : $this->defaults['title'];
+        $get_id = isset( $instance['id'] ) ? $instance['id'] : $this->defaults['id'];
+        $get_link = isset( $instance['link'] ) ? $instance['link'] : $this->defaults['link'];
+        $get_target = isset( $instance['target'] ) ? self::string_to_bool( $instance['target'] ) : $this->defaults['target'];
+        $get_colors[] = ! empty( $instance['text_color'] ) ? sprintf( 'color:%s;', sanitize_hex_color( $instance['text_color'] ) ) : $this->defaults['text_color'];
+        $get_colors[] = ! empty( $instance['background_color'] ) ? sprintf( 'background:%s;', sanitize_hex_color( $instance['background_color'] ) ) : $this->defaults['background_color'];
+        $get_colors = array_filter( $get_colors );
 
         // Bail out, if the button text is NOT defined!
         if ( empty( $get_text ) ) {
             return;
         } // End If Statement
 
-        $output = sprintf( '%s<a href="%s" id="%s" title="%s" target="%s" rel="%s" style="color:%s;background:%s" class="%s">%s</a>%s', $args['before_widget'], ! empty( $get_link )  ?  esc_url( $get_link )  :  '#', esc_attr( $get_id ), esc_attr( $get_title ), $get_target  ?  '_blank'  :  '_self', $get_target  ?  'noopener noreferrer nofollow'  :  '', sanitize_hex_color( $get_text_color ), sanitize_hex_color( $get_background_color ), esc_attr( apply_filters( 'button_widget_classname', 'button' ) ), esc_html( $get_text ), $args['after_widget'] );
+        $output = sprintf( '%s<a href="%s" id="%s" title="%s" target="%s" rel="%s" style="%s" class="%s">%s</a>%s', $args['before_widget'], ! empty( $get_link ) ? esc_url( $get_link ) : '#', esc_attr( $get_id ), esc_attr( $get_title ), $get_target ? '_blank' : '_self', $get_target ? 'noopener noreferrer nofollow' : '', implode( '', $get_colors ), esc_attr( apply_filters( 'button_widget_classname', 'button' ) ), esc_html( $get_text ), $args['after_widget'] );
 
         /**
          * Filters the `Button` widget output.
@@ -175,6 +177,7 @@ class Button_Widget_Register extends WP_Widget {
             <input
                 type="text"
                 class="button-widget-color-picker"
+                data-default-color="<?php echo apply_filters( 'button_widget_text_color', '#FFFFFF' ) ?>"
                 id="<?php echo esc_attr( $this->get_field_id( 'text_color' ) ); ?>"
                 name="<?php echo esc_attr( $this->get_field_name( 'text_color' ) ); ?>"
                 value="<?php echo esc_attr( $instance['text_color'] ); ?>"
@@ -189,6 +192,7 @@ class Button_Widget_Register extends WP_Widget {
             <input
                 type="text"
                 class="button-widget-color-picker"
+                data-default-color="<?php echo apply_filters( 'button_widget_background_color', '#0085BA' ) ?>"
                 id="<?php echo esc_attr( $this->get_field_id( 'background_color' ) ); ?>"
                 name="<?php echo esc_attr( $this->get_field_name( 'background_color' ) ); ?>"
                 value="<?php echo esc_attr( $instance['background_color'] ); ?>"
@@ -213,9 +217,9 @@ class Button_Widget_Register extends WP_Widget {
         $instance['id'] = sanitize_text_field( $new_instance['id'] );
         $instance['title'] = sanitize_text_field( $new_instance['title'] );
         $instance['link'] = esc_url_raw( $new_instance['link'] );
-        $instance['target'] = ( ! isset( $new_instance['target'] ) )  ?  0  :  1;
-        $instance['text_color'] = ! empty( $new_instance['text_color'] )  ?  sanitize_hex_color( $new_instance['text_color'] )  :  $this->defaults['text_color'];
-        $instance['background_color'] = ! empty( $new_instance['background_color'] )  ?  sanitize_hex_color( $new_instance['background_color'] )  :  $this->defaults['background_color'];
+        $instance['target'] = ( ! isset( $new_instance['target'] ) ) ? 0 : 1;
+        $instance['text_color'] = ! empty( $new_instance['text_color'] ) ? sanitize_hex_color( $new_instance['text_color'] ) : $this->defaults['text_color'];
+        $instance['background_color'] = ! empty( $new_instance['background_color'] ) ? sanitize_hex_color( $new_instance['background_color'] ) : $this->defaults['background_color'];
 
         return $instance;
 
@@ -230,7 +234,7 @@ class Button_Widget_Register extends WP_Widget {
      */
     public static function string_to_bool( $input ) {
 
-        return is_bool( $input )  ?  $input  :  ( 'yes' === $input || 1 === $input || 'true' === $input || 'TRUE' === $input || '1' === $input );
+        return is_bool( $input ) ? $input : ( 'yes' === $input || 1 === $input || 'true' === $input || 'TRUE' === $input || '1' === $input );
 
     }
 
