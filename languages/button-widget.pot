@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Button Widget\n"
-"POT-Creation-Date: 2019-12-19 14:02+0300\n"
+"POT-Creation-Date: 2020-04-05 16:38+0300\n"
 "PO-Revision-Date: 2019-12-19 13:44+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -21,79 +21,91 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: button-widget.php:106
-msgctxt "clone"
-msgid "Cloning instances of this class is forbidden."
-msgstr ""
-
-#: button-widget.php:118
-msgctxt "wakeup"
-msgid "Unserializing instances of this class is forbidden."
-msgstr ""
-
-#: button-widget.php:182
-#, php-format
-msgctxt "plugin link"
-msgid "%sHire Me!%s"
-msgstr ""
-
-#: button-widget.php:182
-msgctxt "upsell"
-msgid "Looking for help? Hire Me!"
-msgstr ""
-
-#: button-widget.php:183
-#, php-format
-msgctxt "plugin link"
-msgid "%sSupport%s"
-msgstr ""
-
-#. translators: 1: Plugin name along with opening and closing parentheses.
-#: class-button-widget.php:36
+#: button-widget-register.php:39
 msgctxt "widget name"
 msgid "Button"
 msgstr ""
 
-#: class-button-widget.php:37
+#: button-widget-register.php:41
 msgctxt "widget description"
 msgid "Display a simple button widget in your sidebar areas."
 msgstr ""
 
-#: class-button-widget.php:105
+#: button-widget-register.php:111
 msgctxt "field label"
 msgid "Text:"
 msgstr ""
 
-#: class-button-widget.php:119
+#. translators: %s: Small open and close tags.
+#: button-widget-register.php:128
 #, php-format
 msgctxt "field label"
-msgid "ID %sattribute%s:"
+msgid "ID %1$sattribute%2$s:"
 msgstr ""
 
-#: class-button-widget.php:133
+#. translators: %s: Small open and close tags.
+#: button-widget-register.php:145
 #, php-format
 msgctxt "field label"
-msgid "Title %sattribute%s:"
+msgid "Title %1$sattribute%2$s:"
 msgstr ""
 
-#: class-button-widget.php:147
+#: button-widget-register.php:161
 msgctxt "field label"
 msgid "Link to:"
 msgstr ""
 
-#: class-button-widget.php:168
+#: button-widget-register.php:184
 msgctxt "field label"
 msgid "Open linked address in a new window?"
 msgstr ""
 
-#: class-button-widget.php:175
+#: button-widget-register.php:193
 msgctxt "field label"
 msgid "Color:"
 msgstr ""
 
-#: class-button-widget.php:189
+#: button-widget-register.php:210
 msgctxt "field label"
 msgid "Background:"
+msgstr ""
+
+#: button-widget.php:115
+msgctxt "clone"
+msgid "Cloning instances of this class is forbidden."
+msgstr ""
+
+#: button-widget.php:127
+msgctxt "wakeup"
+msgid "Unserializing instances of this class is forbidden."
+msgstr ""
+
+#. translators: 1: Open anchor tag, 2: Close anchor tag.
+#: button-widget.php:192
+#, php-format
+msgctxt "plugin link"
+msgid "%1$sHire Me!%2$s"
+msgstr ""
+
+#: button-widget.php:192
+msgctxt "upsell"
+msgid "Looking for help? Hire Me!"
+msgstr ""
+
+#. translators: 1: Open anchor tag, 2: Close anchor tag.
+#: button-widget.php:194
+#, php-format
+msgctxt "plugin link"
+msgid "%1$sSupport%2$s"
+msgstr ""
+
+#: vendor/wp-cli/wp-cli/php/utils-wp.php:196
+msgid "Inactive Widgets"
+msgstr ""
+
+#: vendor/wp-cli/wp-cli/php/utils-wp.php:199
+msgid ""
+"Drag widgets here to remove them from the sidebar but keep their settings."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
