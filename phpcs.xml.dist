@@ -80,7 +80,7 @@
         <properties>
             <property name="text_domain" type="array">
                 <!-- This placeholder domain will be replaced automatically on each release. -->
-                <element value="container-block"/>
+                <element value="button-widget"/>
             </property>
         </properties>
     </rule>
