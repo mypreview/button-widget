@@ -13,7 +13,7 @@
  * any later version.
  *
  * @link                    https://www.mypreview.one
- * @since                   1.1.0
+ * @since                   1.1.1
  * @package                 button-widget
  * @author                  MyPreview (Github: @mahdiyazdani, @mypreview)
  * @copyright               © 2015 - 2020 MyPreview. All Rights Reserved.
@@ -68,9 +68,9 @@ if ( ! class_exists( 'Button_Widget' ) ) :
         /**
          * Instance of the class.
          *
-         * @var  object   $_instance
+         * @var  object   $instance
          */
-        private static $_instance = null;
+        private static $instance = null;
 
         /**
          * Main `Button_Widget` instance
@@ -81,11 +81,11 @@ if ( ! class_exists( 'Button_Widget' ) ) :
          */
         public static function instance() {
 
-            if ( is_null( self::$_instance ) ) {
-                self::$_instance = new self();
+            if ( is_null( self::$instance ) ) {
+                self::$instance = new self();
             } // End If Statement
 
-            return self::$_instance;
+            return self::$instance;
 
         }
 
@@ -112,7 +112,7 @@ if ( ! class_exists( 'Button_Widget' ) ) :
          */
         protected function __clone() {
 
-            _doing_it_wrong( __FUNCTION__, _x( 'Cloning instances of this class is forbidden.', 'clone', 'button-widget' ), BUTTON_WIDGET_VERSION );
+            _doing_it_wrong( __FUNCTION__, esc_html_x( 'Cloning instances of this class is forbidden.', 'clone', 'button-widget' ), esc_html( BUTTON_WIDGET_VERSION ) );
 
         }
 
@@ -124,7 +124,7 @@ if ( ! class_exists( 'Button_Widget' ) ) :
          */
         public function __wakeup() {
 
-            _doing_it_wrong( __FUNCTION__, _x( 'Unserializing instances of this class is forbidden.', 'wakeup', 'button-widget' ), BUTTON_WIDGET_VERSION );
+            _doing_it_wrong( __FUNCTION__, esc_html_x( 'Unserializing instances of this class is forbidden.', 'wakeup', 'button-widget' ), esc_html( BUTTON_WIDGET_VERSION ) );
 
         }
 
@@ -182,13 +182,15 @@ if ( ! class_exists( 'Button_Widget' ) ) :
          * Filters the list of action links displayed for a specific plugin in the Plugins list table.
          *
          * @access  public
-         * @param   array $links
-         * @return  array   $links
+         * @param   array $links  An array of plugin action links.
+         * @return  array
          */
         public function additional_links( $links ) {
 
-            $plugin_links   = array();
+            $plugin_links = array();
+            /* translators: 1: Open anchor tag, 2: Close anchor tag. */
             $plugin_links[] = sprintf( _x( '%1$sHire Me!%2$s', 'plugin link', 'button-widget' ), sprintf( '<a href="%s" class="button-link-delete" target="_blank" rel="noopener noreferrer nofollow" title="%s">', esc_url( BUTTON_WIDGET_AUTHOR_URI ), esc_attr_x( 'Looking for help? Hire Me!', 'upsell', 'button-widget' ) ), '</a>' );
+            /* translators: 1: Open anchor tag, 2: Close anchor tag. */
             $plugin_links[] = sprintf( _x( '%1$sSupport%2$s', 'plugin link', 'button-widget' ), '<a href="https://wordpress.org/support/plugin/button-widget" target="_blank" rel="noopener noreferrer nofollow">', '</a>' );
 
             return array_merge( $plugin_links, $links );
@@ -198,13 +200,13 @@ if ( ! class_exists( 'Button_Widget' ) ) :
     }
 endif;
 
-/**
- * Returns the main instance of Button_Widget to prevent the need to use globals.
- *
- * @return  object(class)   Button_Widget::instance
- */
 if ( ! function_exists( 'button_widget_init' ) ) :
 
+    /**
+     * Returns the main instance of Button_Widget to prevent the need to use globals.
+     *
+     * @return  object(class)   Button_Widget::instance
+     */
     function button_widget_init() {
 
         return Button_Widget::instance();

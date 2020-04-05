@@ -5,7 +5,7 @@
  *
  * @package         button-widget
  * @author          MyPreview (Github: @mahdiyazdani, @mypreview)
- * @since           1.1.0
+ * @since           1.1.1
  */
 
 // Exit if accessed directly.
@@ -13,6 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 } // End If Statement
 
+/**
+ * Registering Button Widget - Class
+ */
 class Button_Widget_Register extends WP_Widget {
 
     /**
@@ -85,6 +88,7 @@ class Button_Widget_Register extends WP_Widget {
          *
          * @param string $output    `Button`   Widget html output.
          */
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo apply_filters( 'button_widget_output', $output );
 
     }
@@ -104,7 +108,7 @@ class Button_Widget_Register extends WP_Widget {
                 for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"
             >
             <?php
-                _ex( 'Text:', 'field label', 'button-widget' );
+                echo esc_html_x( 'Text:', 'field label', 'button-widget' );
             ?>
             </label>
             <input
@@ -121,7 +125,7 @@ class Button_Widget_Register extends WP_Widget {
             >
             <?php
                 /* translators: %s: Small open and close tags. */
-                printf( _x( 'ID %1$sattribute%2$s:', 'field label', 'button-widget' ), '<small>', '</small>' );
+                printf( esc_html_x( 'ID %1$sattribute%2$s:', 'field label', 'button-widget' ), '<small>', '</small>' );
             ?>
             </label>
             <input
@@ -138,7 +142,7 @@ class Button_Widget_Register extends WP_Widget {
             >
             <?php
                 /* translators: %s: Small open and close tags. */
-                printf( _x( 'Title %1$sattribute%2$s:', 'field label', 'button-widget' ), '<small>', '</small>' );
+                printf( esc_html_x( 'Title %1$sattribute%2$s:', 'field label', 'button-widget' ), '<small>', '</small>' );
             ?>
             </label>
             <input
@@ -154,7 +158,7 @@ class Button_Widget_Register extends WP_Widget {
                 for="<?php echo esc_attr( $this->get_field_id( 'link' ) ); ?>"
             >
             <?php
-                _ex( 'Link to:', 'field label', 'button-widget' );
+                echo esc_html_x( 'Link to:', 'field label', 'button-widget' );
             ?>
             </label>
             <input
@@ -177,7 +181,7 @@ class Button_Widget_Register extends WP_Widget {
                 for="<?php echo esc_attr( $this->get_field_id( 'target' ) ); ?>"
             >
             <?php
-                _ex( 'Open linked address in a new window?', 'field label', 'button-widget' );
+                echo esc_html_x( 'Open linked address in a new window?', 'field label', 'button-widget' );
             ?>
             </label>
         </p>
@@ -186,13 +190,13 @@ class Button_Widget_Register extends WP_Widget {
                 for="<?php echo esc_attr( $this->get_field_id( 'text_color' ) ); ?>"
             >
             <?php
-                _ex( 'Color:', 'field label', 'button-widget' );
+                echo esc_html_x( 'Color:', 'field label', 'button-widget' );
             ?>
             </label>
             <input
                 type="text"
                 class="button-widget-color-picker"
-                data-default-color="<?php echo apply_filters( 'button_widget_text_color', '#FFFFFF' ); ?>"
+                data-default-color="<?php echo sanitize_hex_color( apply_filters( 'button_widget_text_color', '#FFFFFF' ) ); ?>"
                 id="<?php echo esc_attr( $this->get_field_id( 'text_color' ) ); ?>"
                 name="<?php echo esc_attr( $this->get_field_name( 'text_color' ) ); ?>"
                 value="<?php echo esc_attr( $instance['text_color'] ); ?>"
@@ -203,13 +207,13 @@ class Button_Widget_Register extends WP_Widget {
                 for="<?php echo esc_attr( $this->get_field_id( 'background_color' ) ); ?>"
             >
             <?php
-                _ex( 'Background:', 'field label', 'button-widget' );
+                echo esc_html_x( 'Background:', 'field label', 'button-widget' );
             ?>
             </label>
             <input
                 type="text"
                 class="button-widget-color-picker"
-                data-default-color="<?php echo apply_filters( 'button_widget_background_color', '#0085BA' ); ?>"
+                data-default-color="<?php echo sanitize_hex_color( apply_filters( 'button_widget_background_color', '#0085BA' ) ); ?>"
                 id="<?php echo esc_attr( $this->get_field_id( 'background_color' ) ); ?>"
                 name="<?php echo esc_attr( $this->get_field_name( 'background_color' ) ); ?>"
                 value="<?php echo esc_attr( $instance['background_color'] ); ?>"
