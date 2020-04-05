@@ -1,4 +1,4 @@
-<?php   
+<?php
 /**
  * Button widget
  * A simple button widget for your sidebars.
@@ -10,7 +10,7 @@
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; 
+    exit;
 } // End If Statement
 
 class Button_Widget_Register extends WP_Widget {
@@ -31,20 +31,23 @@ class Button_Widget_Register extends WP_Widget {
      */
     public function __construct() {
 
-        parent::__construct( 
-            'button_widget', apply_filters( 'button_widget_name', _x( 'Button', 'widget name', 'button-widget' ) ), array( 
-            'description' => _x( 'Display a simple button widget in your sidebar areas.', 'widget description', 'button-widget' ),
-            'customize_selective_refresh' => TRUE
-        ) );
+        parent::__construct(
+            'button_widget',
+            apply_filters( 'button_widget_name', _x( 'Button', 'widget name', 'button-widget' ) ),
+            array(
+                'description'                 => _x( 'Display a simple button widget in your sidebar areas.', 'widget description', 'button-widget' ),
+                'customize_selective_refresh' => true,
+            )
+        );
 
         $this->defaults = array(
-            'text' => '',
-            'title' => '',
-            'id' => '',
-            'link' => '',
-            'target' => 0,
-            'text_color' => '',
-            'background_color' => ''
+            'text'             => '',
+            'title'            => '',
+            'id'               => '',
+            'link'             => '',
+            'target'           => 0,
+            'text_color'       => '',
+            'background_color' => '',
         );
 
     }
@@ -53,22 +56,22 @@ class Button_Widget_Register extends WP_Widget {
      * Widget Front End.
      *
      * @access  public
-     * @param   mixed   $args       Arguments.
-     * @param   mixed   $instance   Instance.
+     * @param   mixed $args       Arguments.
+     * @param   mixed $instance   Instance.
      * @return  void
      */
     public function widget( $args, $instance ) {
 
-        $get_colors = array();
-        $instance = wp_parse_args( (array) $instance, $this->defaults );
-        $get_text = isset( $instance['text'] ) ? $instance['text'] : $this->defaults['text'];
-        $get_title = isset( $instance['title'] ) ? $instance['title'] : $this->defaults['title'];
-        $get_id = isset( $instance['id'] ) ? $instance['id'] : $this->defaults['id'];
-        $get_link = isset( $instance['link'] ) ? $instance['link'] : $this->defaults['link'];
-        $get_target = isset( $instance['target'] ) ? self::string_to_bool( $instance['target'] ) : $this->defaults['target'];
+        $get_colors   = array();
+        $instance     = wp_parse_args( (array) $instance, $this->defaults );
+        $get_text     = isset( $instance['text'] ) ? $instance['text'] : $this->defaults['text'];
+        $get_title    = isset( $instance['title'] ) ? $instance['title'] : $this->defaults['title'];
+        $get_id       = isset( $instance['id'] ) ? $instance['id'] : $this->defaults['id'];
+        $get_link     = isset( $instance['link'] ) ? $instance['link'] : $this->defaults['link'];
+        $get_target   = isset( $instance['target'] ) ? self::string_to_bool( $instance['target'] ) : $this->defaults['target'];
         $get_colors[] = ! empty( $instance['text_color'] ) ? sprintf( 'color:%s;', sanitize_hex_color( $instance['text_color'] ) ) : $this->defaults['text_color'];
         $get_colors[] = ! empty( $instance['background_color'] ) ? sprintf( 'background:%s;', sanitize_hex_color( $instance['background_color'] ) ) : $this->defaults['background_color'];
-        $get_colors = array_filter( $get_colors );
+        $get_colors   = array_filter( $get_colors );
 
         // Bail out, if the button text is NOT defined!
         if ( empty( $get_text ) ) {
@@ -90,18 +93,20 @@ class Button_Widget_Register extends WP_Widget {
      * Widget Settings.
      *
      * @access  public
-     * @param   mixed   $instance   Instance.
+     * @param   mixed $instance   Instance.
      * @return  void
      */
     public function form( $instance ) {
-        
+
         $instance = wp_parse_args( (array) $instance, $this->defaults );
         ?><p>
             <label 
                 for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"
-            ><?php 
-                _ex( 'Text:', 'field label', 'button-widget' ); 
-            ?></label>
+            >
+            <?php
+                _ex( 'Text:', 'field label', 'button-widget' );
+            ?>
+            </label>
             <input
                 type="text"
                 class="widefat"
@@ -113,10 +118,12 @@ class Button_Widget_Register extends WP_Widget {
         <p>
             <label 
                 for="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>"
-            ><?php 
+            >
+            <?php
                 /* translators: %s: Small open and close tags. */
-                printf( _x( 'ID %sattribute%s:', 'field label', 'button-widget' ), '<small>', '</small>' ); 
-            ?></label>
+                printf( _x( 'ID %1$sattribute%2$s:', 'field label', 'button-widget' ), '<small>', '</small>' );
+            ?>
+            </label>
             <input
                 type="text"
                 class="widefat"
@@ -128,10 +135,12 @@ class Button_Widget_Register extends WP_Widget {
         <p>
             <label 
                 for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
-            ><?php 
+            >
+            <?php
                 /* translators: %s: Small open and close tags. */
-                printf( _x( 'Title %sattribute%s:', 'field label', 'button-widget' ), '<small>', '</small>' ); 
-            ?></label>
+                printf( _x( 'Title %1$sattribute%2$s:', 'field label', 'button-widget' ), '<small>', '</small>' );
+            ?>
+            </label>
             <input
                 type="text"
                 class="widefat"
@@ -143,9 +152,11 @@ class Button_Widget_Register extends WP_Widget {
         <p>
             <label 
                 for="<?php echo esc_attr( $this->get_field_id( 'link' ) ); ?>"
-            ><?php 
-                _ex( 'Link to:', 'field label', 'button-widget' ); 
-            ?></label>
+            >
+            <?php
+                _ex( 'Link to:', 'field label', 'button-widget' );
+            ?>
+            </label>
             <input
                 type="url"
                 class="widefat"
@@ -164,20 +175,24 @@ class Button_Widget_Register extends WP_Widget {
             />
             <label 
                 for="<?php echo esc_attr( $this->get_field_id( 'target' ) ); ?>"
-            ><?php 
-                _ex( 'Open linked address in a new window?', 'field label', 'button-widget' ); 
-            ?></label>
+            >
+            <?php
+                _ex( 'Open linked address in a new window?', 'field label', 'button-widget' );
+            ?>
+            </label>
         </p>
         <p>
             <label 
                 for="<?php echo esc_attr( $this->get_field_id( 'text_color' ) ); ?>"
-            ><?php 
-                _ex( 'Color:', 'field label', 'button-widget' ); 
-            ?></label>
+            >
+            <?php
+                _ex( 'Color:', 'field label', 'button-widget' );
+            ?>
+            </label>
             <input
                 type="text"
                 class="button-widget-color-picker"
-                data-default-color="<?php echo apply_filters( 'button_widget_text_color', '#FFFFFF' ) ?>"
+                data-default-color="<?php echo apply_filters( 'button_widget_text_color', '#FFFFFF' ); ?>"
                 id="<?php echo esc_attr( $this->get_field_id( 'text_color' ) ); ?>"
                 name="<?php echo esc_attr( $this->get_field_name( 'text_color' ) ); ?>"
                 value="<?php echo esc_attr( $instance['text_color'] ); ?>"
@@ -186,13 +201,15 @@ class Button_Widget_Register extends WP_Widget {
         <p>
             <label 
                 for="<?php echo esc_attr( $this->get_field_id( 'background_color' ) ); ?>"
-            ><?php 
-                _ex( 'Background:', 'field label', 'button-widget' ); 
-            ?></label>
+            >
+            <?php
+                _ex( 'Background:', 'field label', 'button-widget' );
+            ?>
+            </label>
             <input
                 type="text"
                 class="button-widget-color-picker"
-                data-default-color="<?php echo apply_filters( 'button_widget_background_color', '#0085BA' ) ?>"
+                data-default-color="<?php echo apply_filters( 'button_widget_background_color', '#0085BA' ); ?>"
                 id="<?php echo esc_attr( $this->get_field_id( 'background_color' ) ); ?>"
                 name="<?php echo esc_attr( $this->get_field_name( 'background_color' ) ); ?>"
                 value="<?php echo esc_attr( $instance['background_color'] ); ?>"
@@ -206,19 +223,19 @@ class Button_Widget_Register extends WP_Widget {
      * Update Widget Settings.
      *
      * @access  public
-     * @param   mixed     $new_instance   New Instance.
-     * @param   mixed     $old_instance   Old Instance.
+     * @param   mixed $new_instance   New Instance.
+     * @param   mixed $old_instance   Old Instance.
      * @return  Instance.
      */
     public function update( $new_instance, $old_instance ) {
 
-        $instance = array();
-        $instance['text'] = sanitize_text_field( $new_instance['text'] );
-        $instance['id'] = sanitize_text_field( $new_instance['id'] );
-        $instance['title'] = sanitize_text_field( $new_instance['title'] );
-        $instance['link'] = esc_url_raw( $new_instance['link'] );
-        $instance['target'] = ( ! isset( $new_instance['target'] ) ) ? 0 : 1;
-        $instance['text_color'] = ! empty( $new_instance['text_color'] ) ? sanitize_hex_color( $new_instance['text_color'] ) : $this->defaults['text_color'];
+        $instance                     = array();
+        $instance['text']             = sanitize_text_field( $new_instance['text'] );
+        $instance['id']               = sanitize_text_field( $new_instance['id'] );
+        $instance['title']            = sanitize_text_field( $new_instance['title'] );
+        $instance['link']             = esc_url_raw( $new_instance['link'] );
+        $instance['target']           = ( ! isset( $new_instance['target'] ) ) ? 0 : 1;
+        $instance['text_color']       = ! empty( $new_instance['text_color'] ) ? sanitize_hex_color( $new_instance['text_color'] ) : $this->defaults['text_color'];
         $instance['background_color'] = ! empty( $new_instance['background_color'] ) ? sanitize_hex_color( $new_instance['background_color'] ) : $this->defaults['background_color'];
 
         return $instance;
@@ -229,8 +246,8 @@ class Button_Widget_Register extends WP_Widget {
      * Converts a string (e.g. 'yes' or 'no') to a bool.
      *
      * @access  public
-     * @param   string   $input   String to convert.
-     * @return  bool        
+     * @param   string $input   String to convert.
+     * @return  bool
      */
     public static function string_to_bool( $input ) {
 
