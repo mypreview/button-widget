@@ -5,7 +5,7 @@ Donate link: https://www.mypreview.one
 Requires at least: 5.0
 Tested up to: 5.4.0
 Requires PHP: 7.2
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,16 +43,6 @@ Automatic updates should work smoothly, but we still recommend you back up your 
 4. Then click the Save button to save the widget’s customization.
 5. Preview the site. You should now see the added button widget is visible.
 
-= How do I customize the button’s appearance? =
-Although the button text and background color can be edited, the widget adapts your theme’s default button style with adding the `button` class name to the output markup. You may modify it using the following filter:
-`
-function prefix_custom_button_widget_classname( $classname ) {
-	$classname = 'custom-class-name';
-	return (string) $classname;
-} 
-add_filter( 'button_widget_classname', 'prefix_button_widget_classname', 10, 1 );
-`
-
 = How do I get help with the plugin? =
 The easiest way to receive support is to “Create a new topic” by visiting Community Forums page [here](https://wordpress.org/support/plugin/button-widget "Button Widget Support Forum").
 
@@ -83,6 +73,9 @@ I am a full-stack developer with over five years of experience in WordPress them
 2. Button widget visible on TwentyTwenty theme’s footer.
 
 == Changelog ==
+= 1.2.0 =
+* Added additional CSS class(es) support.
+
 = 1.1.1 =
 * Multiple code standards improvements.
 * Compatibility with WordPress 5.4.0
