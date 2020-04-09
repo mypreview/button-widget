@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Button Widget\n"
-"POT-Creation-Date: 2020-04-05 16:38+0300\n"
+"POT-Creation-Date: 2020-04-09 15:49+0300\n"
 "PO-Revision-Date: 2019-12-19 13:44+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -31,41 +31,48 @@ msgctxt "widget description"
 msgid "Display a simple button widget in your sidebar areas."
 msgstr ""
 
-#: button-widget-register.php:111
+#: button-widget-register.php:113
 msgctxt "field label"
 msgid "Text:"
 msgstr ""
 
 #. translators: %s: Small open and close tags.
-#: button-widget-register.php:128
+#: button-widget-register.php:130
 #, php-format
 msgctxt "field label"
 msgid "ID %1$sattribute%2$s:"
 msgstr ""
 
 #. translators: %s: Small open and close tags.
-#: button-widget-register.php:145
+#: button-widget-register.php:147
 #, php-format
 msgctxt "field label"
 msgid "Title %1$sattribute%2$s:"
 msgstr ""
 
-#: button-widget-register.php:161
+#. translators: %s: Small open and close tags.
+#: button-widget-register.php:164
+#, php-format
+msgctxt "field label"
+msgid "CSS Class(es) %1$sSeparate multiple classes with spaces%2$s:"
+msgstr ""
+
+#: button-widget-register.php:180
 msgctxt "field label"
 msgid "Link to:"
 msgstr ""
 
-#: button-widget-register.php:184
+#: button-widget-register.php:203
 msgctxt "field label"
 msgid "Open linked address in a new window?"
 msgstr ""
 
-#: button-widget-register.php:193
+#: button-widget-register.php:212
 msgctxt "field label"
 msgid "Color:"
 msgstr ""
 
-#: button-widget-register.php:210
+#: button-widget-register.php:229
 msgctxt "field label"
 msgid "Background:"
 msgstr ""
