@@ -5,7 +5,7 @@
  *
  * @package         button-widget
  * @author          MyPreview (Github: @mahdiyazdani, @mypreview)
- * @since           1.1.1
+ * @since           1.2.0
  */
 
 // Exit if accessed directly.
@@ -47,6 +47,7 @@ class Button_Widget_Register extends WP_Widget {
             'text'             => '',
             'title'            => '',
             'id'               => '',
+            'class'            => 'button',
             'link'             => '',
             'target'           => 0,
             'text_color'       => '',
@@ -70,6 +71,7 @@ class Button_Widget_Register extends WP_Widget {
         $get_text     = isset( $instance['text'] ) ? $instance['text'] : $this->defaults['text'];
         $get_title    = isset( $instance['title'] ) ? $instance['title'] : $this->defaults['title'];
         $get_id       = isset( $instance['id'] ) ? $instance['id'] : $this->defaults['id'];
+        $get_class    = isset( $instance['class'] ) ? $instance['class'] : $this->defaults['class'];
         $get_link     = isset( $instance['link'] ) ? $instance['link'] : $this->defaults['link'];
         $get_target   = isset( $instance['target'] ) ? self::string_to_bool( $instance['target'] ) : $this->defaults['target'];
         $get_colors[] = ! empty( $instance['text_color'] ) ? sprintf( 'color:%s;', sanitize_hex_color( $instance['text_color'] ) ) : $this->defaults['text_color'];
@@ -81,7 +83,7 @@ class Button_Widget_Register extends WP_Widget {
             return;
         } // End If Statement
 
-        $output = sprintf( '%s<a href="%s" id="%s" title="%s" target="%s" rel="%s" style="%s" class="%s">%s</a>%s', $args['before_widget'], ! empty( $get_link ) ? esc_url( $get_link ) : '#', esc_attr( $get_id ), esc_attr( $get_title ), $get_target ? '_blank' : '_self', $get_target ? 'noopener noreferrer nofollow' : '', implode( '', $get_colors ), esc_attr( apply_filters( 'button_widget_classname', 'button' ) ), esc_html( $get_text ), $args['after_widget'] );
+        $output = sprintf( '%s<a href="%s" id="%s" title="%s" target="%s" rel="%s" style="%s" class="%s">%s</a>%s', $args['before_widget'], ! empty( $get_link ) ? esc_url( $get_link ) : '#', esc_attr( $get_id ), esc_attr( $get_title ), $get_target ? '_blank' : '_self', $get_target ? 'noopener noreferrer nofollow' : '', implode( '', $get_colors ), esc_attr( $get_class ), esc_html( $get_text ), $args['after_widget'] );
 
         /**
          * Filters the `Button` widget output.
@@ -151,6 +153,23 @@ class Button_Widget_Register extends WP_Widget {
                 id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
                 name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
                 value="<?php echo esc_attr( $instance['title'] ); ?>"
+            />
+        </p>
+        <p>
+            <label 
+                for="<?php echo esc_attr( $this->get_field_id( 'class' ) ); ?>"
+            >
+            <?php
+                /* translators: %s: Small open and close tags. */
+                printf( esc_html_x( 'CSS Class(es) %1$sSeparate multiple classes with spaces%2$s:', 'field label', 'button-widget' ), '<small>', '</small>' );
+            ?>
+            </label>
+            <input
+                type="text"
+                class="widefat"
+                id="<?php echo esc_attr( $this->get_field_id( 'class' ) ); ?>"
+                name="<?php echo esc_attr( $this->get_field_name( 'class' ) ); ?>"
+                value="<?php echo esc_attr( $instance['class'] ); ?>"
             />
         </p>
         <p>
@@ -236,6 +255,7 @@ class Button_Widget_Register extends WP_Widget {
         $instance                     = array();
         $instance['text']             = sanitize_text_field( $new_instance['text'] );
         $instance['id']               = sanitize_text_field( $new_instance['id'] );
+        $instance['class']            = sanitize_text_field( $new_instance['class'] );
         $instance['title']            = sanitize_text_field( $new_instance['title'] );
         $instance['link']             = esc_url_raw( $new_instance['link'] );
         $instance['target']           = ( ! isset( $new_instance['target'] ) ) ? 0 : 1;
