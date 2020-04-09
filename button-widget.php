@@ -22,7 +22,7 @@
  * Plugin Name:             Button Widget
  * Plugin URI:              https://www.mypreview.one
  * Description:             A simple customizable button widget for your sidebars to allow users take actions, and make choices, with a single tap.
- * Version:                 1.1.1
+ * Version:                 1.2.0
  * Author:                  MyPreview
  * Author URI:              https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94
  * License:                 GPL-2.0
