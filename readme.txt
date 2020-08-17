@@ -3,11 +3,11 @@ Contributors: mahdiyazdani, mypreview, gookaani
 Tags: button, widget, callout, call to action
 Donate link: https://www.mypreview.one
 Requires at least: 5.0
-Tested up to: 5.4.0
+Tested up to: 5.5
 Requires PHP: 7.2
-Stable tag: 1.2.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Stable tag: 1.2.1
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 A simple customizable button widget for your sidebars.
 
@@ -64,21 +64,25 @@ Here’s the [GitHub development repository &#8594;](https://github.com/myprevie
 Please share your experience by leaving this plugin [5 shining stars](https://wordpress.org/support/plugin/button-widget/reviews/ "Rate Button Widget 5 stars") if you like it, thanks!
 
 = I need help customizing this plugin? =
-I am a full-stack developer with over five years of experience in WordPress theme and plugin development and customization. I would love to have the opportunity to discuss your project with you.
+Professional engineer and independent creative technologist in tech · over 6 years experience working from prototype to production · developing WordPress products, services, and eCommerce solutions.
 
-[Hire me on UpWork &#8594;](https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94/ "Mahdi Yazdani Freelancer Profile")
+[Available for hire &#8594;](https://mahdiyazdani.com "Mahdi Yazdani’s personal website")
 
 == Screenshots ==
 1. Widget settings interface
 2. Button widget visible on TwentyTwenty theme’s footer.
 
 == Changelog ==
+= 1.2.1 =
+* Multiple code standards improvements.
+* Compatibility with WordPress 5.5
+
 = 1.2.0 =
 * Added additional CSS class(es) support.
 
 = 1.1.1 =
 * Multiple code standards improvements.
-* Compatibility with WordPress 5.4.0
+* Compatibility with WordPress 5.4
 
 = 1.1.0 =
 * Ability to leave color picker control values empty.
