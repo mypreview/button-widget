@@ -1,138 +1,116 @@
-#, fuzzy
+# Copyright (C) 2020 MyPreview
+# This file is distributed under the GPL-3.0.
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Button Widget\n"
-"POT-Creation-Date: 2020-04-09 15:49+0300\n"
-"PO-Revision-Date: 2019-12-19 13:44+0300\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Project-Id-Version: Button Widget 1.2.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/button-widget\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.1\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: button-widget.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
+"POT-Creation-Date: 2020-08-17T20:25:42+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: button-widget\n"
 
-#: button-widget-register.php:39
+#. Plugin Name of the plugin
+msgid "Button Widget"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://www.mypreview.one"
+msgstr ""
+
+#. Description of the plugin
+msgid "A simple customizable button widget for your sidebars to allow users take actions, and make choices, with a single tap."
+msgstr ""
+
+#. Author of the plugin
+msgid "MyPreview"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://mahdiyazdani.com"
+msgstr ""
+
+#: button-widget-register.php:38
 msgctxt "widget name"
 msgid "Button"
 msgstr ""
 
-#: button-widget-register.php:41
+#: button-widget-register.php:40
 msgctxt "widget description"
 msgid "Display a simple button widget in your sidebar areas."
 msgstr ""
 
-#: button-widget-register.php:113
+#: button-widget-register.php:108
 msgctxt "field label"
 msgid "Text:"
 msgstr ""
 
 #. translators: %s: Small open and close tags.
-#: button-widget-register.php:130
-#, php-format
+#: button-widget-register.php:125
 msgctxt "field label"
 msgid "ID %1$sattribute%2$s:"
 msgstr ""
 
 #. translators: %s: Small open and close tags.
-#: button-widget-register.php:147
-#, php-format
+#: button-widget-register.php:142
 msgctxt "field label"
 msgid "Title %1$sattribute%2$s:"
 msgstr ""
 
 #. translators: %s: Small open and close tags.
-#: button-widget-register.php:164
-#, php-format
+#: button-widget-register.php:159
 msgctxt "field label"
 msgid "CSS Class(es) %1$sSeparate multiple classes with spaces%2$s:"
 msgstr ""
 
-#: button-widget-register.php:180
+#: button-widget-register.php:175
 msgctxt "field label"
 msgid "Link to:"
 msgstr ""
 
-#: button-widget-register.php:203
+#: button-widget-register.php:198
 msgctxt "field label"
 msgid "Open linked address in a new window?"
 msgstr ""
 
-#: button-widget-register.php:212
+#: button-widget-register.php:207
 msgctxt "field label"
 msgid "Color:"
 msgstr ""
 
-#: button-widget-register.php:229
+#: button-widget-register.php:224
 msgctxt "field label"
 msgid "Background:"
 msgstr ""
 
-#: button-widget.php:115
+#: button-widget.php:111
 msgctxt "clone"
 msgid "Cloning instances of this class is forbidden."
 msgstr ""
 
-#: button-widget.php:127
+#: button-widget.php:121
 msgctxt "wakeup"
 msgid "Unserializing instances of this class is forbidden."
 msgstr ""
 
 #. translators: 1: Open anchor tag, 2: Close anchor tag.
-#: button-widget.php:192
-#, php-format
+#: button-widget.php:178
 msgctxt "plugin link"
 msgid "%1$sHire Me!%2$s"
 msgstr ""
 
-#: button-widget.php:192
+#. translators: 1: Open anchor tag, 2: Close anchor tag.
+#: button-widget.php:178
 msgctxt "upsell"
 msgid "Looking for help? Hire Me!"
 msgstr ""
 
 #. translators: 1: Open anchor tag, 2: Close anchor tag.
-#: button-widget.php:194
-#, php-format
+#: button-widget.php:180
 msgctxt "plugin link"
 msgid "%1$sSupport%2$s"
-msgstr ""
-
-#: vendor/wp-cli/wp-cli/php/utils-wp.php:196
-msgid "Inactive Widgets"
-msgstr ""
-
-#: vendor/wp-cli/wp-cli/php/utils-wp.php:199
-msgid ""
-"Drag widgets here to remove them from the sidebar but keep their settings."
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "Button Widget"
-msgstr ""
-
-#. Plugin URI of the plugin/theme
-msgid "https://www.mypreview.one"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"A simple customizable button widget for your sidebars to allow users take "
-"actions, and make choices, with a single tap."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "MyPreview"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94"
 msgstr ""
