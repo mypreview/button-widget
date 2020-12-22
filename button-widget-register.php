@@ -21,7 +21,7 @@ class Button_Widget_Register extends WP_Widget {
 	/**
 	 * Defaults
 	 *
-	 * @access  private
+	 * @since   1.2.1
 	 * @var     defaults
 	 */
 	private $defaults;
@@ -29,7 +29,7 @@ class Button_Widget_Register extends WP_Widget {
 	/**
 	 * Setup class.
 	 *
-	 * @access  public
+	 * @since   1.2.1
 	 * @return  void
 	 */
 	public function __construct() {
@@ -57,7 +57,7 @@ class Button_Widget_Register extends WP_Widget {
 	/**
 	 * Widget Front End.
 	 *
-	 * @access  public
+	 * @since   1.2.1
 	 * @param   mixed $args       Arguments.
 	 * @param   mixed $instance   Instance.
 	 * @return  void
@@ -94,7 +94,7 @@ class Button_Widget_Register extends WP_Widget {
 	/**
 	 * Widget Settings.
 	 *
-	 * @access  public
+	 * @since   1.2.1
 	 * @param   mixed $instance   Instance.
 	 * @return  void
 	 */
@@ -239,7 +239,7 @@ class Button_Widget_Register extends WP_Widget {
 	/**
 	 * Update Widget Settings.
 	 *
-	 * @access  public
+	 * @since   1.2.1
 	 * @param   mixed $new_instance   New Instance.
 	 * @param   mixed $old_instance   Old Instance.
 	 * @return  Instance.
@@ -261,7 +261,7 @@ class Button_Widget_Register extends WP_Widget {
 	/**
 	 * Converts a string (e.g. 'yes' or 'no') to a bool.
 	 *
-	 * @access  public
+	 * @since   1.2.1
 	 * @param   string $input   String to convert.
 	 * @return  bool
 	 */

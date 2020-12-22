@@ -16,13 +16,15 @@
  * @since                   1.2.1
  * @package                 button-widget
  * @author                  MyPreview (Github: @mahdiyazdani, @mypreview)
- * @copyright               © 2015 - 2020 MyPreview. All Rights Reserved.
+ * @copyright               © 2015 - 2021 MyPreview. All Rights Reserved.
  *
  * @wordpress-plugin
  * Plugin Name:             Button Widget
  * Plugin URI:              https://www.mypreview.one
  * Description:             A simple customizable button widget for your sidebars to allow users take actions, and make choices, with a single tap.
- * Version:                 1.2.1
+ * Version:                 1.2.2
+ * Requires at least:       WordPress 5.0
+ * Requires PHP:            7.2.0
  * Author:                  MyPreview
  * Author URI:              https://mahdiyazdani.com
  * License:                 GPL-3.0
@@ -69,7 +71,8 @@ if ( ! class_exists( 'Button_Widget' ) ) :
 		/**
 		 * Instance of the class.
 		 *
-		 * @var  object   $instance
+		 * @since   1.2.1
+		 * @var  	object   $instance
 		 */
 		private static $instance = null;
 
@@ -77,7 +80,7 @@ if ( ! class_exists( 'Button_Widget' ) ) :
 		 * Main `Button_Widget` instance
 		 * Ensures only one instance of `Button_Widget` is loaded or can be loaded.
 		 *
-		 * @access  public
+		 * @since   1.2.1
 		 * @return  instance
 		 */
 		public static function instance() {
@@ -91,7 +94,7 @@ if ( ! class_exists( 'Button_Widget' ) ) :
 		/**
 		 * Setup class.
 		 *
-		 * @access  protected
+		 * @since   1.2.1
 		 * @return  void
 		 */
 		protected function __construct() {
@@ -104,7 +107,7 @@ if ( ! class_exists( 'Button_Widget' ) ) :
 		/**
 		 * Cloning instances of this class is forbidden.
 		 *
-		 * @access  protected
+		 * @since   1.2.1
 		 * @return  void
 		 */
 		protected function __clone() {
@@ -114,7 +117,7 @@ if ( ! class_exists( 'Button_Widget' ) ) :
 		/**
 		 * Unserializing instances of this class is forbidden.
 		 *
-		 * @access  public
+		 * @since   1.2.1
 		 * @return  void
 		 */
 		public function __wakeup() {
@@ -125,7 +128,7 @@ if ( ! class_exists( 'Button_Widget' ) ) :
 		 * Load languages file and text domains.
 		 * Define the internationalization functionality.
 		 *
-		 * @access  public
+		 * @since   1.2.1
 		 * @return  void
 		 */
 		public function textdomain() {
@@ -135,7 +138,7 @@ if ( ! class_exists( 'Button_Widget' ) ) :
 		/**
 		 * Enqueue scripts and styles.
 		 *
-		 * @access  public
+		 * @since   1.2.1
 		 * @return  void
 		 */
 		public function enqueue() {
@@ -156,7 +159,7 @@ if ( ! class_exists( 'Button_Widget' ) ) :
 		 * Registers all custom and built-in widgets right after all default
 		 * WordPress widgets have been registered.
 		 *
-		 * @access  public
+		 * @since   1.2.1
 		 * @return  void
 		 */
 		public function register_widget() {
@@ -168,7 +171,7 @@ if ( ! class_exists( 'Button_Widget' ) ) :
 		 * Display additional links in plugins table page.
 		 * Filters the list of action links displayed for a specific plugin in the Plugins list table.
 		 *
-		 * @access  public
+		 * @since   1.2.1
 		 * @param   array $links  An array of plugin action links.
 		 * @return  array
 		 */
@@ -190,6 +193,7 @@ if ( ! function_exists( 'button_widget_init' ) ) :
 	/**
 	 * Returns the main instance of Button_Widget to prevent the need to use globals.
 	 *
+	 * @since   1.2.1
 	 * @return  object(class)   Button_Widget::instance
 	 */
 	function button_widget_init() {
