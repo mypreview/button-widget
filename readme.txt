@@ -1,11 +1,11 @@
 === Button Widget ===
 Contributors: mahdiyazdani, mypreview, gookaani
-Tags: button, widget, callout, call to action
+Tags: button, widget, callout, call to action, wordpress button plugin
 Donate link: https://www.mypreview.one
 Requires at least: 5.0
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 7.2
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -73,6 +73,9 @@ Professional engineer and independent creative technologist in tech · over 6 ye
 2. Button widget visible on TwentyTwenty theme’s footer.
 
 == Changelog ==
+= 1.2.2 =
+* Compatibility with WordPress 5.6
+
 = 1.2.1 =
 * Multiple code standards improvements.
 * Compatibility with WordPress 5.5
